@@ -7,25 +7,25 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>index page</title>
-  </head>
-  <body>
-  <h1 style="text-align: center">IP SEARCH</h1>
-  <form style="text-align: center" action="index" method="post">
-    <input style="text-align: center" type="text" name="ip" placeholder="ip 地址">
+</head>
+<body>
+<h1 style="text-align: center">IP SEARCH</h1>
+<form style="text-align: center" action="index" method="post">
+    <input type="text" name="ip" placeholder="ip 地址">
     <input type="submit" value="查询"><br>
-  </form>
-  <p style="text-align: center"><%
+</form>
+<p style="text-align: center"><%
     String ip = request.getParameter("ip");
     if (ip != null) {
-      out.print(ip);
+        out.print(ip);
     }%><br><%
     String message = (String) request.getAttribute("message");
     if (message != null) {
-      out.print(message);
+        out.print(message);
     }
-  %></p>
-  <h5 style="text-align: center">全球IP信息管理中心</h5>
-  </body>
+%></p>
+<h5 style="text-align: center">全球IP信息管理中心</h5>
+</body>
 </html>

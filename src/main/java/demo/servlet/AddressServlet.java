@@ -35,6 +35,9 @@ public class AddressServlet extends HttpServlet {
             if (resultSet.next()) {
                 req.setAttribute("message", resultSet.getString("geo"));
                 req.getRequestDispatcher("index.jsp").forward(req, resp);
+            }else {
+                req.setAttribute("message", resultSet.getString("您要查询的IP不存在"));
+                req.getRequestDispatcher("index.jsp").forward(req, resp);
             }
         } catch (SQLException e) {
             e.printStackTrace();
