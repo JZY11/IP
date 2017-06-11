@@ -16,14 +16,16 @@
     <input style="text-align: center" type="text" name="ip" placeholder="ip 地址">
     <input type="submit" value="查询"><br>
   </form>
-  <p>
-    <%
-      String ip = (String) request.getAttribute("message");
-      if (message != null) {
-        out.print(message);
-      }
-    %>
-  </p>
+  <p style="text-align: center"><%
+    String ip = request.getParameter("ip");
+    if (ip != null) {
+      out.print(ip);
+    }%><br><%
+    String message = (String) request.getAttribute("message");
+    if (message != null) {
+      out.print(message);
+    }
+  %></p>
   <h5 style="text-align: center">全球IP信息管理中心</h5>
   </body>
 </html>
